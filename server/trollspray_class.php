@@ -21,7 +21,7 @@ class TrollSpray {
   function findNick() {
     if(!$this->html) return false;
     foreach($this->html->find("a") as $a) {
-      if($a->innertext == "ben") {
+      if(trim(strip_tags($a->innertext)) == "ben") {
         $this->nick = substr($a->title, 0, 40);
         break;
       }
